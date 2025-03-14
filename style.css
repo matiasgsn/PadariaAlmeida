@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap');
+
+:root{
+    --color-orange-primary: oklch(0.954 0.038 75.164);
+    --color-orange-secondary: oklch(0.901 0.076 70.697);
+    --color-orange-tertiary: oklch(0.705 0.213 47.604);
+
+    --color-dark: oklch(0.147 0.004 49.25);
+    --color-light: oklch(0.985 0.001 106.423);
+}
+
+body{
+    background-color: var(--color-orange-primary);
+}
+
+.highlight{
+    font-weight: 800;
+    color: var(--color-orange-tertiary);
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+/*Navbar*/
+#navbar{
+    background-color: var(--color-orange-secondary);
+    
+    & .navbar-brand{
+        font-family: 'Slabo';
+        align-items: center;
+
+        background-color: var(--color-light);
+        padding: 0.5vh 2vw;
+        border-radius: 1vh;
+
+        & span{
+            color:var(--color-orange-tertiary);
+            letter-spacing: -10%;
+            font-size: 1.5rem;
+        }
+    }
+
+    & .navbar-items{
+        background-color: var(--color-orange-primary);
+        padding: 0.2vh 0.5vh;
+        border-radius: 1vh;
+
+        & .nav-link{
+            font-family: 'Roboto';
+    
+            color: var(--color-dark);
+            gap: 0.1vw;
+            font-weight: 300;
+            font-size: 1rem;
+
+            border: 0.5vh solid transparent;
+            
+            padding: 1vh 2vw;
+
+            &:first-child{
+                border-top-left-radius: 1vh;
+                border-bottom-left-radius: 1vh;
+            }
+
+            &:last-child{
+                border-top-right-radius: 1vh;
+                border-bottom-right-radius: 1vh;
+            }
+
+            &:hover:not(.active){
+                border-color: var(--color-orange-secondary);
+                border-style: solid;
+                border-width: 0.5vh;
+
+                background-color: var(--color-orange-secondary);
+            }
+        }
+
+        & .active{
+            background-color: var(--color-orange-secondary);
+        }
+        
+    }
+
+}
+
+@media (min-width: 992px) {
+    #navbar{
+        & .navbar-brand {
+            margin-left: 15vw !important;
+        }        
+    }
+}
+
+@media (min-width: 1200px) {
+    #navbar{
+        & .navbar-items{
+            position: absolute !important;
+        }
+        
+    }
+}
+
+/*Hero*/
+
+#hero{
+    & #hero-text{
+        background-color: var(--color-light);
+        padding: 7.5vh;
+        border-radius: 2vh;
+    }
+}
