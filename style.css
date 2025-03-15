@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Slabo+27px&display=swap');
 
 :root{
     --color-orange-primary: oklch(0.954 0.038 75.164);
@@ -10,6 +10,7 @@
 }
 
 body{
+    font-family: Inter;
     background-color: var(--color-orange-primary);
 }
 
@@ -22,32 +23,44 @@ body{
     text-decoration: underline;
 }
 
+.grow{
+    transition: all 0.1s ease-in-out;
+}
+
+.grow:hover{
+    transform:scale(1.1);
+}
+
 /*Navbar*/
 #navbar{
     background-color: var(--color-orange-secondary);
     
     & .navbar-brand{
-        font-family: 'Slabo';
+        font-family: 'Slabo 27px';
         align-items: center;
 
         background-color: var(--color-light);
         padding: 0.5vh 2vw;
         border-radius: 1vh;
+        border-style: solid;
+        border-width: 0.2vh;
 
         & span{
             color:var(--color-orange-tertiary);
             letter-spacing: -10%;
             font-size: 1.5rem;
+            font-weight: 600;
         }
     }
 
     & .navbar-items{
-        background-color: var(--color-orange-primary);
+        background-color: var(--color-light);
         padding: 0.2vh 0.5vh;
         border-radius: 1vh;
+        border-width: 0.2vh;
+        border-style: solid;
 
         & .nav-link{
-            font-family: 'Roboto';
     
             color: var(--color-dark);
             gap: 0.1vw;
@@ -56,7 +69,7 @@ body{
 
             border: 0.5vh solid transparent;
             
-            padding: 1vh 2vw;
+            padding: 1vh 4vw;
 
             &:first-child{
                 border-top-left-radius: 1vh;
@@ -88,26 +101,97 @@ body{
 @media (min-width: 992px) {
     #navbar{
         & .navbar-brand {
-            margin-left: 15vw !important;
-        }        
+            margin-left: 20% !important;
+        }
+        
+        & .navbar-items {
+            margin-right: 20% !important;
+        }
     }
 }
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
     #navbar{
         & .navbar-items{
             position: absolute !important;
         }
         
     }
-}
+}*/
 
 /*Hero*/
 
 #hero{
+    padding-top: 5vh;
+
     & #hero-text{
+        border-style: solid;
         background-color: var(--color-light);
         padding: 7.5vh;
         border-radius: 2vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    #hero{
+        padding-top: 7.5vh;
+    }
+}
+
+
+/*Produtos*/
+#produtos{
+    & h2{
+        padding: 2vh;
+        border-radius: 2vh;
+
+        & .tituloProdutos{
+            background-color: var(--color-light);
+            padding: 1vh 2vh;
+            border-radius: 2vh;
+
+            border-style: solid;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #produtos{
+        padding-top: 25vh !important;
+        padding-bottom: 25vh !important;
+    }
+}
+
+.icon{
+    padding: 0.2em;
+
+    background-color: transparent;
+    border-radius: 0.5em;
+    border-style: solid;
+    border-width: 0.1em;
+}
+/*Estrutura*/
+
+#estrutura{
+
+    & h2{
+        padding: 2vh;
+        border-radius: 2vh;
+
+        & .tituloEstrutura{
+            background-color: var(--color-light);
+            padding: 1vh 2vh;
+            border-radius: 2vh;
+
+            border-style: solid;
+        }
+    }
+
+    & .card{
+        filter: drop-shadow(14px 15px 13px #0000007c);
+    }
+
+    & h3{
+        text-shadow: rgb(2, 2, 2) 1px 0 10px;
     }
 }
